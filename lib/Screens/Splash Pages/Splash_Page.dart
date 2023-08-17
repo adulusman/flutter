@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
+import '../../Core/local/local_variables.dart';
 import 'Splash_Select_Language.dart';
 
 class Splash_Page extends StatefulWidget {
@@ -11,8 +12,7 @@ class Splash_Page extends StatefulWidget {
   State<Splash_Page> createState() => _Splash_PageState();
 }
 
-var width;
-var height;
+
 final List<Language> languages = [
   Language(name: 'English', id: 1),
   Language(name: 'Malayalam', id: 2),
@@ -22,6 +22,7 @@ final List<Language> languages = [
 ];
 
 class _Splash_PageState extends State<Splash_Page> {
+
   @override
 
   void initState() {
@@ -34,8 +35,8 @@ class _Splash_PageState extends State<Splash_Page> {
   }
 
   Widget build(BuildContext context) {
-    var width = MediaQuery.sizeOf(context).width;
-    var height = MediaQuery.sizeOf(context).height;
+    scrWidth = MediaQuery.sizeOf(context).width;
+     scrHeight = MediaQuery.sizeOf(context).height;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -45,8 +46,8 @@ class _Splash_PageState extends State<Splash_Page> {
         children: [
           Center(
             child: Container(
-              width: width * 0.4,
-              height: height * 0.3,
+              width: scrWidth * 0.4,
+              height: scrHeight * 0.3,
               color: Colors.white,
               child: SvgPicture.asset("assets/Splash_Image.svg"),
             ),
