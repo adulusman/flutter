@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../BottomNavigation/NavPage.dart';
 import 'Forgot_Password.dart';
 import 'Google_Login_Add_detail.dart';
-import 'SignUp_Page.dart';
+import '../../feature/auth/screens/SignUp_Page.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
