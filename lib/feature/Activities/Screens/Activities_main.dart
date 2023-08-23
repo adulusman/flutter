@@ -72,7 +72,7 @@ class _ActivitiesState extends State<Activities> {
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => Todo()));
                                 break;
                               case 1:
-                                // Navigator.push(context, MaterialPageRoute(builder: (context) => Subscription()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => Letter_Self()));
                                 break;
 
                               case 2:
@@ -184,10 +184,11 @@ class _TodoState extends State<Todo> {
                   width: scrWidth*1,
                   color: Colors.white,
                   child: GridView.builder(
-                      itemCount: 4,
+                    physics: NeverScrollableScrollPhysics(),
+                      itemCount: 6,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                        mainAxisSpacing: 9,
+                        mainAxisSpacing: 13,
                         crossAxisSpacing: 9   ,
                         childAspectRatio: 0.7
                       ),
@@ -244,13 +245,14 @@ class _TodoState extends State<Todo> {
 
 
 
+
+
 class Todo_Adding extends StatefulWidget {
   const Todo_Adding({super.key});
 
   @override
   State<Todo_Adding> createState() => _Todo_AddingState();
 }
-
 class _Todo_AddingState extends State<Todo_Adding> {
   @override
   Widget build(BuildContext context) {
@@ -262,7 +264,7 @@ class _Todo_AddingState extends State<Todo_Adding> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height:scrWidth*0.06,),
+                SizedBox(height:scrHeight*0.046),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -285,25 +287,24 @@ class _Todo_AddingState extends State<Todo_Adding> {
                       ],
                     )
 
-
-
                   ],
                 ),
-                SizedBox(height: 70,),
+                SizedBox(height: scrWidth*0.04,),
                 TextFormField(
+                  style: GoogleFonts.inter(fontWeight: FontWeight.w700,fontSize: scrWidth*0.06,color: Color(0xff180E25)),
                   decoration: InputDecoration(
                     hintText: "Title Here",
-                    hintStyle: GoogleFonts.inter(fontWeight: FontWeight.w700,fontSize: 22,color: Color(0xff180E25)),
+                    hintStyle: GoogleFonts.inter(fontWeight: FontWeight.w700,fontSize: scrWidth*0.06,color: Color(0xff180E25)),
                     border: InputBorder.none
 
                   ),
                 ),
-                SizedBox(height: scrWidth*0.03,),
                 TextFormField(
                   maxLines: null,
+                  style: GoogleFonts.inter(fontSize: scrWidth*0.03,fontWeight: FontWeight.w400),
                   decoration: InputDecoration(
                     hintText: "Description Here",
-                    hintStyle: GoogleFonts.inter(fontSize: 12,fontWeight: FontWeight.w400),
+                    hintStyle: GoogleFonts.inter(fontSize: scrWidth*0.03,fontWeight: FontWeight.w400),
                     border: InputBorder.none,
 
                   ),
@@ -319,5 +320,112 @@ class _Todo_AddingState extends State<Todo_Adding> {
     );
   }
 }
+
+
+
+
+class Letter_Self extends StatefulWidget {
+  const Letter_Self({super.key});
+
+  @override
+  State<Letter_Self> createState() => _Letter_SelfState();
+}
+class _Letter_SelfState extends State<Letter_Self> {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Padding(
+          padding: EdgeInsets.only(left: scrWidth*0.04,right: scrWidth*0.04),
+          child: Column(
+            children: [
+              SizedBox(height: scrWidth*0.07,),
+              Row(
+                children: [
+                  InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(Icons.arrow_back,)),
+                  SizedBox(width: scrWidth*0.03,),
+                  Text("Letter",style: GoogleFonts.inter(fontWeight: FontWeight.w700,fontSize: scrWidth*0.049),),
+
+                ],
+              ),
+              SizedBox(height: scrWidth*0.04,),
+              Container(
+                height: scrHeight*0.06,
+                width: scrWidth*1,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(scrWidth*0.02),
+                    color: Color(0xffF2F2F2)
+                ),
+                child: TextFormField(
+                  style: GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: scrWidth*0.03),
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.only(top: scrWidth*0.04),
+                      hintText: "search note",
+                      border: InputBorder.none,
+                      prefixIcon: Icon(Icons.search_rounded),
+                      hintStyle: GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: scrWidth*0.03,color: Color(0xff747474))
+                  ),
+                ),
+              ),
+              SizedBox(height: scrWidth*0.06,),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: 5,
+                    physics: BouncingScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return Container(
+                        height: scrHeight*0.16,
+                        width: scrWidth*1,
+                        color: Color(0xffF7F6D4),
+                        margin: EdgeInsets.only(bottom: scrHeight*0.02),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(scrWidth*0.03),
+                              child: Column(
+                                children: [
+                                  Text("Aug"),
+                                  Text("11"),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(scrWidth*0.03),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Title Here",style: GoogleFonts.inter(fontWeight: FontWeight.w700,fontSize: scrWidth*0.045),),
+                                  SizedBox(height: scrWidth*0.028), // Add some space
+                                  // Text("Create a mobile app ui kit sdcds sadsad qwer ewf sfds sdfv",overflow: TextOverflow.ellipsis,
+                                  //  style:GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: scrWidth*0.03) ,)
+                                ],
+                              ),
+                            ),
+                            Icon(Icons.close)
+
+                          ],
+                        ),
+
+                      );
+                    }, ),
+              )
+
+
+
+
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
 
