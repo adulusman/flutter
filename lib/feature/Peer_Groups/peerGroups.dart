@@ -34,7 +34,7 @@ class _PeerGroupsState extends State<PeerGroups> {
                       physics: BouncingScrollPhysics(),
                       itemBuilder:(context, index) {
                         return Container(
-                          margin: EdgeInsets.only(bottom: scrWidth*0.03),
+                          margin: EdgeInsets.only(bottom: scrWidth*0.04),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

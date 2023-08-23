@@ -13,6 +13,8 @@ import 'package:soulknobe_customer/feature/auth/screens/Login_Pages/Login_Page.d
 import 'package:syncfusion_flutter_core/theme.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
+import 'Profile_page.dart';
+
 class Home_Page extends ConsumerStatefulWidget {
   const Home_Page({Key? key}) : super(key: key);
 
@@ -116,6 +118,7 @@ class _Home_PageState extends ConsumerState<Home_Page> {
         body: Padding(
           padding: EdgeInsets.all(width * 0.04),
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 Row(
@@ -123,13 +126,18 @@ class _Home_PageState extends ConsumerState<Home_Page> {
                   children: [
                     Row(
                       children: [
-                        const CircleAvatar(
-                          radius: 20,
-                          backgroundColor: Color(0xFFFFCB14),
-                          child: Text("S",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white)),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => Profile(),));
+                          },
+                          child: CircleAvatar(
+                            radius: scrWidth*0.05,
+                            backgroundColor: Color(0xFFFFCB14),
+                            child: Text("S",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,fontSize: scrWidth*0.05)),
+                          ),
                         ),
                         SizedBox(
                           width: width * 0.03,
