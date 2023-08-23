@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../Login_Pages/Login_Page.dart';
+import '../../feature/auth/screens/Login_Pages/Login_Page.dart';
 
 class Questions_Page extends StatefulWidget {
   const Questions_Page({super.key});

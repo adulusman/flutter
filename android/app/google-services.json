@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "433166743184",
+    "project_id": "soulknob-e0637",
+    "storage_bucket": "soulknob-e0637.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433166743184:android:7d26995265bee6f3fa4a15",
+        "android_client_info": {
+          "package_name": "com.firstlogicmetalab.soulknobe_customer.soulknobe_customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433166743184-fmqfu9uudnsakmj3o2eg4lepjkfg9m14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqJGLAaSnHGQVJjTVqI1dQt14e8CeEK-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433166743184-fmqfu9uudnsakmj3o2eg4lepjkfg9m14.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "433166743184-0t351tmir2jhejqao766q14gogi4045r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.soulknob"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
