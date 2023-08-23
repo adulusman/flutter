@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../feature/auth/screens/Login_Pages/Login_Page.dart';
+import '../../Core/local/local_variables.dart';
+
 
 class Questions_Page extends StatefulWidget {
   const Questions_Page({super.key});
@@ -19,18 +20,16 @@ class _Questions_PageState extends State<Questions_Page> {
   @override
   Widget build(BuildContext context) {
 
-    var width = MediaQuery.sizeOf(context).width;
-    var height = MediaQuery.sizeOf(context).height;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
-          padding: EdgeInsets.only(left: width*0.03,right: width*0.03),
+          padding: EdgeInsets.only(left: scrWidth*0.03,right: scrWidth*0.03),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 SizedBox(
-                  height:height*0.04,
+                  height:scrHeight*0.04,
                 ),
                 InkWell(
                     onTap: () {
@@ -38,37 +37,37 @@ class _Questions_PageState extends State<Questions_Page> {
                     },
                     child: Align(
                         alignment: AlignmentDirectional.topEnd,
-                        child: Text("Skip",style: GoogleFonts.inter(fontWeight: FontWeight.w500,fontSize: width*0.04),))),
+                        child: Text("Skip",style: GoogleFonts.inter(fontWeight: FontWeight.w500,fontSize: scrWidth*0.04),))),
                 SizedBox(
-                  height:height*0.035,
+                  height:scrHeight*0.035,
                 ),
 
                 Container(
-                  height: height * 0.35,
-                  width: width * 0.7,
+                  height: scrHeight * 0.35,
+                  width: scrWidth * 0.7,
                   color: Colors.white,
                   child: SvgPicture.asset(
                     'assets/question1.svg',
                     alignment: Alignment.center,
-                    width: width * 0.7,
-                    height: height * 0.3,
+                    width: scrWidth * 0.7,
+                    height: scrHeight * 0.3,
                   ),
                 ),
                 CircleAvatar(
                   backgroundColor: Color(0xFF46A3DB),
-                  radius: width*0.04,
+                  radius: scrWidth*0.04,
                   child: Text("1"),
                 ),
                 SizedBox(
-                  height: width*0.06,
+                  height: scrWidth*0.06,
                 ),
-                Center(child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry.",style: GoogleFonts.inter(fontWeight: FontWeight.w700,fontSize: height*0.018))),
+                Center(child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry.",style: GoogleFonts.inter(fontWeight: FontWeight.w700,fontSize: scrHeight*0.018))),
                 SizedBox(
-                  height: width*0.06,
+                  height: scrWidth*0.06,
                 ),
                 Container(
-                  height: height*0.2,
-                  width: width*1,
+                  height: scrHeight*0.2,
+                  width: scrWidth*1,
                   color: Colors.white,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -86,12 +85,12 @@ class _Questions_PageState extends State<Questions_Page> {
                               });
                             },
                             child: Container(
-                              height: height*0.05,
-                              width: width*0.45,
+                              height: scrHeight*0.05,
+                              width: scrWidth*0.45,
                               decoration: BoxDecoration(
                                 gradient: checkFirst?LinearGradient(colors: [Color(0xFF46A3DB), Color(0xFF006CAC)]) : LinearGradient(colors: [Colors.white,Colors.white]),
                                 border: Border.all(color:Color(0xFF46A3DB)),
-                                borderRadius: BorderRadius.circular(width*0.06)
+                                borderRadius: BorderRadius.circular(scrWidth*0.06)
                               ),
                               child: Center(child: Text("Dataa",style: GoogleFonts.inter(fontWeight: FontWeight.w500,color: checkFirst?Colors.white:Colors.blue))),
                             ),
@@ -109,12 +108,12 @@ class _Questions_PageState extends State<Questions_Page> {
 
                             },
                             child: Container(
-                              height: height*0.05,
-                              width: width*0.45,
+                              height: scrHeight*0.05,
+                              width: scrWidth*0.45,
                               decoration: BoxDecoration(
                                   gradient: checkSecond?LinearGradient(colors: [Color(0xFF46A3DB), Color(0xFF006CAC)]) :LinearGradient(colors: [Colors.white,Colors.white]),
                                   border: Border.all(color:Color(0xFF46A3DB)),
-                                  borderRadius: BorderRadius.circular(width*0.06)
+                                  borderRadius: BorderRadius.circular(scrWidth*0.06)
                               ),
                               child: Center(
                                   child: Text(
@@ -138,12 +137,12 @@ class _Questions_PageState extends State<Questions_Page> {
                               });
                             },
                             child: Container(
-                              height: height*0.05,
-                              width: width*0.45,
+                              height: scrHeight*0.05,
+                              width: scrWidth*0.45,
                               decoration: BoxDecoration(
                                   gradient: checkThird?LinearGradient(colors: [Color(0xFF46A3DB), Color(0xFF006CAC)]) : LinearGradient(colors: [Colors.white,Colors.white]),
                                   border: Border.all(color:Color(0xFF46A3DB)),
-                                  borderRadius: BorderRadius.circular(width*0.06)
+                                  borderRadius: BorderRadius.circular(scrWidth*0.06)
                               ),
                               child: Center(child: Text("Dataa",style: GoogleFonts.inter(fontWeight: FontWeight.w500,color: checkThird?Colors.white:Colors.blue))),
                             ),
@@ -159,12 +158,12 @@ class _Questions_PageState extends State<Questions_Page> {
 
                             },
                             child: Container(
-                              height: height*0.05,
-                              width: width*0.45,
+                              height: scrHeight*0.05,
+                              width: scrWidth*0.45,
                               decoration: BoxDecoration(
                                   gradient: checkfour?LinearGradient(colors: [Color(0xFF46A3DB), Color(0xFF006CAC)]) : LinearGradient(colors: [Colors.white,Colors.white]),
                                   border: Border.all(color:Color(0xFF46A3DB)),
-                                  borderRadius: BorderRadius.circular(width*0.06)
+                                  borderRadius: BorderRadius.circular(scrWidth*0.06)
                               ),
                               child: Center(child: Text("Dataa",style: GoogleFonts.inter(fontWeight: FontWeight.w500,color:checkfour?Colors.white:Colors.blue))),
                             ),
@@ -174,24 +173,24 @@ class _Questions_PageState extends State<Questions_Page> {
                     ],
                   ),
                 ),
-                SizedBox(height: width*0.05,),
+                SizedBox(height: scrWidth*0.05,),
                 InkWell(
 
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Login(),));
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => Login(),));
                   },
                   child: Container(
-                    height:height*0.055,
-                    width: width*1,
+                    height:scrHeight*0.055,
+                    width: scrWidth*1,
                     decoration: BoxDecoration(
                         color: Color(0xFF46A3DB),
-                        borderRadius: BorderRadius.circular(width*0.03)
+                        borderRadius: BorderRadius.circular(scrWidth*0.03)
 
                     ),
                     child:Center(
                       child: Text(
                         "Next",style: GoogleFonts.inter(
-                          fontWeight: FontWeight.w600,fontSize: width*0.05,color: Color(0xFFFFFFFF)),),
+                          fontWeight: FontWeight.w600,fontSize: scrWidth*0.05,color: Color(0xFFFFFFFF)),),
                     ),
 
                   ),

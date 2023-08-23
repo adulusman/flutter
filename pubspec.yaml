@@ -53,6 +53,10 @@ dependencies:
   file_picker: ^4.0.0
   firebase_storage: ^11.2.5
   intl: ^0.18.1
+  easy_date_timeline: ^0.0.7
+  intl_phone_field: ^3.2.0
+  flutter_pannable_rating_bar: ^2.7.2+1
+
   google_sign_in:
   intl_phone_field: ^3.2.0
   shared_preferences: ^2.2.0
