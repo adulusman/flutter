@@ -107,7 +107,7 @@ class _NavBarState extends State<NavBar> {
         child: PageView(
           controller: controller,
           physics: NeverScrollableScrollPhysics(),
-          children: const [
+          children:  [
             Home_Page(),
             Appointemnts(),
             PeerGroups(),
