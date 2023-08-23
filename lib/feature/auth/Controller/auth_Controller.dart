@@ -9,7 +9,7 @@ import 'package:soulknobe_customer/Screens/Splash%20Pages/Splash_Page.dart';
 import '../../../Core/common/utils.dart';
 import '../../../Model/UserModel.dart';
 import '../Repository/auth_Repository.dart';
-import '../screens/Google_Auth/Google_Login_Add_detail.dart';
+import '../screens/Google_Auth/Add_detail.dart';
 
 // final userProvider = StateProvider<UserModel?>((ref) => null);
 // final userproviders = StateProvider<UserModel?>((ref) => null);

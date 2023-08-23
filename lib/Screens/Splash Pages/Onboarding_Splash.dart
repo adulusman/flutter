@@ -3,8 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import '../../Core/local/local_variables.dart';
-import '../../Screens/Login_Pages/Login_Page.dart';
-import '../Login_Pages/Screens/Individual_Corporate_Login.dart';
+import '../../feature/auth/screens/Login_Pages/Login_Page.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
@@ -18,7 +17,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
 
   void _onIntroEnd(context) {
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const Individual_Corporate()),
+      MaterialPageRoute(builder: (_) => const Login_Page()),
     );
   }
 

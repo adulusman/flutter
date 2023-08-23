@@ -9,14 +9,14 @@ import '../../Controller/auth_Controller.dart';
 import '../Register_page/SignUp_Page.dart';
 import 'Forgot_Password.dart';
 
-class Login extends ConsumerStatefulWidget {
-  const Login({super.key});
+class Login_Page extends ConsumerStatefulWidget {
+  const Login_Page({super.key});
 
   @override
-  ConsumerState<Login> createState() => _Individual_CorporateState();
+  ConsumerState<Login_Page> createState() => _Individual_CorporateState();
 }
 
-class _Individual_CorporateState extends ConsumerState<Login> {
+class _Individual_CorporateState extends ConsumerState<Login_Page> {
   TextEditingController indiidualemailController = TextEditingController();
   TextEditingController indiidualpasswordController = TextEditingController();
   TextEditingController corporateemailController = TextEditingController();
@@ -388,8 +388,7 @@ class _Individual_CorporateState extends ConsumerState<Login> {
                                                 ),
                                                 InkWell(
                                                   onTap: () {
-                                                    signWithgoogle(
-                                                        context, ref);
+
                                                   },
                                                   child: Center(
                                                     child: SvgPicture.asset(
@@ -595,7 +594,7 @@ class _Individual_CorporateState extends ConsumerState<Login> {
                                                     context,
                                                     MaterialPageRoute(
                                                       builder: (context) =>
-                                                          const Navbar(),
+                                                          const NavBar(),
                                                     ));
                                               },
                                               child: Container(

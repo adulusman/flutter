@@ -7,7 +7,7 @@ import 'package:soulknobe_customer/Core/Constants/colors.dart';
 import 'package:soulknobe_customer/Core/Constants/size.dart';
 import 'package:soulknobe_customer/Screens/BottomNavigation/Home/Controller/Profile_page_Controller.dart';
 
-import '../../../Core/local/local_variables.dart';
+import '../../../../Core/local/local_variables.dart';
 
 class Profile extends ConsumerStatefulWidget {
   const Profile({super.key});

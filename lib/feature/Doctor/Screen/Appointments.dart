@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:soulknobe_customer/feature/auth/Doctor/Screen/doctor_booking.dart';
+import 'package:soulknobe_customer/Core/local/local_variables.dart';
+
+import 'doctor_booking.dart';
+
 
 class Appointemnts extends StatefulWidget {
   const Appointemnts({super.key});
@@ -10,8 +13,7 @@ class Appointemnts extends StatefulWidget {
   State<Appointemnts> createState() => _AppointemntsState();
 }
 
-var width;
-var height;
+
 
 class _AppointemntsState extends State<Appointemnts> {
   var data;
@@ -28,14 +30,13 @@ class _AppointemntsState extends State<Appointemnts> {
 
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.of(context).size.width;
-    height = MediaQuery.of(context).size.width;
+
 
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
-          padding: EdgeInsets.all(width * 0.035),
+          padding: EdgeInsets.all(scrWidth * 0.035),
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
@@ -50,13 +51,13 @@ class _AppointemntsState extends State<Appointemnts> {
                           "Find Your Desired",
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              fontSize: width * 0.06),
+                              fontSize: scrWidth * 0.06),
                         ),
                         Text(
                           "Consultant",
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              fontSize: width * 0.06),
+                              fontSize: scrWidth * 0.06),
                         )
                       ],
                     ),
@@ -64,27 +65,27 @@ class _AppointemntsState extends State<Appointemnts> {
                   ],
                 ),
                 SizedBox(
-                  height: width * 0.03,
+                  height: scrWidth * 0.03,
                 ),
                 Container(
-                  height: width * 0.12,
-                  width: width * 1.3,
+                  height: scrWidth * 0.12,
+                  width: scrWidth * 1.3,
                   decoration: BoxDecoration(
                       color: const Color(0xFFF2F2F2),
                       borderRadius: BorderRadius.circular(10)),
                   child: TextFormField(
                     decoration: InputDecoration(
                         hintText: "Search For Doctors",
-                        prefixIcon: Icon(Icons.search, size: width * 0.07),
+                        prefixIcon: Icon(Icons.search, size: scrWidth * 0.07),
                         border: InputBorder.none),
                   ),
                 ),
                 SizedBox(
-                  height: width * 0.03,
+                  height: scrWidth * 0.03,
                 ),
                 SizedBox(
-                    height: width * 2,
-                    width: width * 1,
+                    height: scrWidth * 2,
+                    width: scrWidth * 1,
                     child: StreamBuilder(
                       stream: FirebaseFirestore.instance
                           .collection("doctors")
@@ -105,9 +106,9 @@ class _AppointemntsState extends State<Appointemnts> {
                             }
 
                             return Container(
-                              margin: EdgeInsets.only(bottom: width * 0.03),
-                              width: width * 1,
-                              height: width * 0.3,
+                              margin: EdgeInsets.only(bottom: scrWidth * 0.03),
+                              width: scrWidth * 1,
+                              height: scrWidth * 0.3,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: const Color(0xFFF2F2F2),
@@ -120,12 +121,12 @@ class _AppointemntsState extends State<Appointemnts> {
                                     children: [
                                       SvgPicture.asset(
                                         "assets/Login.svg",
-                                        height: width * 0.25,
-                                        width: width * 0.25,
+                                        height: scrWidth * 0.25,
+                                        width: scrWidth * 0.25,
                                         fit: BoxFit.cover,
                                       ),
                                       SizedBox(
-                                        width: width * 0.04,
+                                        width: scrWidth * 0.04,
                                       ),
                                       Column(
                                         mainAxisAlignment:
@@ -137,32 +138,32 @@ class _AppointemntsState extends State<Appointemnts> {
                                             //doctor name
                                             docName,
                                             style: TextStyle(
-                                                fontSize: width * 0.05,
+                                                fontSize: scrWidth * 0.05,
                                                 fontWeight: FontWeight.w500),
                                           ),
                                           SizedBox(
-                                            height: width * 0.02,
+                                            height: scrWidth * 0.02,
                                           ),
                                           Text(
                                             //doctor department
                                             department,
                                             style: TextStyle(
-                                                fontSize: width * 0.035,
+                                                fontSize: scrWidth * 0.035,
                                                 fontWeight: FontWeight.w400,
                                                 color: const Color(0xFF727272)),
                                           ),
                                           SizedBox(
-                                            height: width * 0.01,
+                                            height: scrWidth * 0.01,
                                           ),
                                           Text(
                                             "hospital",
                                             style: TextStyle(
-                                                fontSize: width * 0.035,
+                                                fontSize: scrWidth * 0.035,
                                                 fontWeight: FontWeight.w400,
                                                 color: const Color(0xFF727272)),
                                           ),
                                           SizedBox(
-                                            height: width * 0.01,
+                                            height: scrWidth * 0.01,
                                           ),
                                           SvgPicture.asset(
                                               "assets/Rating_star.svg")
@@ -183,8 +184,8 @@ class _AppointemntsState extends State<Appointemnts> {
                                                   )));
                                     },
                                     child: Container(
-                                      width: width * 0.22,
-                                      height: width * 0.085,
+                                      width: scrWidth * 0.22,
+                                      height: scrWidth * 0.085,
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(20),
@@ -194,7 +195,7 @@ class _AppointemntsState extends State<Appointemnts> {
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontWeight: FontWeight.w500,
-                                                  fontSize: width * 0.04))),
+                                                  fontSize: scrWidth * 0.04))),
                                     ),
                                   )
                                 ],

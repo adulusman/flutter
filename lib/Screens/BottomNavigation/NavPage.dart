@@ -7,21 +7,22 @@ import 'package:stylish_bottom_bar/model/bar_items.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
 import '../../Core/local/local_variables.dart';
-import '../Questions/Questions_Page.dart';
-import 'Activities/Screens/Activities_main.dart';
-import 'Appointment/Appointments.dart';
-import 'Home/Home_Page.dart';
-import 'Peer_Groups/peerGroups.dart';
-class AnimatedBarExample extends StatefulWidget {
-  const AnimatedBarExample({
+
+import '../../feature/Activities/Screens/Activities_main.dart';
+import '../../feature/Doctor/Screen/Appointments.dart';
+
+import '../../feature/Peer_Groups/peerGroups.dart';
+import 'Home/screen/Home_Page.dart';
+class NavBar extends StatefulWidget {
+  const NavBar({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<AnimatedBarExample> createState() => _AnimatedBarExampleState();
+  State<NavBar> createState() => _NavBarState();
 }
 
-class _AnimatedBarExampleState extends State<AnimatedBarExample> {
+class _NavBarState extends State<NavBar> {
   dynamic selected;
 
   PageController controller = PageController();

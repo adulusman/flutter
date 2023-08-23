@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:soulknobe_customer/Core/Constants/firebase_constants/firebase_Constants.dart';
 import 'package:soulknobe_customer/Core/firebase_Providers/firebase_Provider.dart';
 import 'package:soulknobe_customer/Screens/BottomNavigation/NavPage.dart';
-import 'package:soulknobe_customer/feature/auth/screens/Google_Auth/Google_Login_Add_detail.dart';
+import 'package:soulknobe_customer/feature/auth/screens/Google_Auth/Add_detail.dart';
 import 'package:soulknobe_customer/feature/auth/screens/Login_Pages/Login_Page.dart';
 
 import '../../Core/local/local_variables.dart';
@@ -84,7 +84,7 @@ class _Splash_PageState extends ConsumerState<Splash_Page> {
             Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const Navbar(),
+                  builder: (context) => const NavBar(),
                 ),
                 (route) => false);
           }
@@ -93,7 +93,7 @@ class _Splash_PageState extends ConsumerState<Splash_Page> {
         Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(
-              builder: (context) => const Login(),
+              builder: (context) => const Login_Page(),
             ),
             (route) => false);
       }

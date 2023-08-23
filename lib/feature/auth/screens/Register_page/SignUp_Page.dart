@@ -401,7 +401,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
           .then((value) {
         showSnackBar(context, "REGISTER SUCCESSFULL");
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => const Navbar()));
+            context, MaterialPageRoute(builder: (context) => const NavBar()));
       });
     }
   }

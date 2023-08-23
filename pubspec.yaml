@@ -57,10 +57,8 @@ dependencies:
   intl_phone_field: ^3.2.0
   flutter_pannable_rating_bar: ^2.7.2+1
 
-  google_sign_in:
-  intl_phone_field: ^3.2.0
+  google_sign_in: ^6.1.4
   shared_preferences: ^2.2.0
-  easy_date_timeline: ^0.0.7
 
 dev_dependencies:
   flutter_test:

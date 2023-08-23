@@ -29,7 +29,7 @@ class _Home_PageState extends ConsumerState<Home_Page> {
     if (proceed) {
       ref.read(authControllerProvider.notifier).logout();
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const Login()));
+          context, MaterialPageRoute(builder: (context) => const Login_Page()));
       showSnackBar(context, "LOGOUT SUCCESS");
     }
   }
