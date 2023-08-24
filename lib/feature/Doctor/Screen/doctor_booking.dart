@@ -22,6 +22,7 @@ class _Doctor_Booking_pageState extends State<Doctor_Booking_page> {
     return SafeArea(
       child: SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.white,
           body: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(

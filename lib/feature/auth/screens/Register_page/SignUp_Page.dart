@@ -8,6 +8,7 @@ import 'package:soulknobe_customer/Model/UserModel.dart';
 import 'package:soulknobe_customer/feature/auth/Controller/auth_Controller.dart';
 
 import '../../../../Core/common/utils.dart';
+import '../../../../Core/local/local_variables.dart';
 import '../../../../Screens/BottomNavigation/NavPage.dart';
 
 class SignUpPage extends ConsumerStatefulWidget {
@@ -17,8 +18,7 @@ class SignUpPage extends ConsumerStatefulWidget {
   ConsumerState<SignUpPage> createState() => _SignUpPageState();
 }
 
-var width;
-var height;
+
 
 class _SignUpPageState extends ConsumerState<SignUpPage> {
   final usenameController = TextEditingController();
@@ -35,20 +35,19 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     final passwordVisibility = ref.watch(passwordeyeProvider);
-    var width = MediaQuery.sizeOf(context).width;
-    var height = MediaQuery.sizeOf(context).height;
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
-          padding: EdgeInsets.only(left: width * 0.03, right: width * 0.04),
+          padding: EdgeInsets.only(left: scrWidth * 0.03, right: scrWidth * 0.04),
           child: SingleChildScrollView(
             child: Form(
               key: _formKey,
               child: Column(
                 children: [
                   SizedBox(
-                    height: height * 0.06,
+                    height: scrHeight * 0.06,
                   ),
                   // Row(
                   //   mainAxisAlignment: MainAxisAlignment.start,
@@ -63,29 +62,29 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                   SvgPicture.asset(
                     'assets/Signup.svg',
                     alignment: Alignment.center,
-                    width: width * 1,
-                    height: height * 0.23,
+                    width: scrWidth * 1,
+                    height: scrHeight * 0.23,
                   ),
                   SizedBox(
-                    height: width * 0.08,
+                    height: scrWidth * 0.08,
                   ),
 
                   Text(
                     "Create Your Account",
                     style: GoogleFonts.inter(
                         fontWeight: FontWeight.w700,
-                        fontSize: width * 0.04,
+                        fontSize: scrWidth * 0.04,
                         color: const Color(0xFF141414)),
                   ),
                   SizedBox(
-                    height: width * 0.06,
+                    height: scrWidth * 0.06,
                   ),
 
                   SizedBox(
-                    height: width * 0.04,
+                    height: scrWidth * 0.04,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: width * 0.02),
+                    padding: EdgeInsets.only(left: scrWidth * 0.02),
                     child: TextFormField(
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
@@ -98,23 +97,33 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                         return null;
                       },
                       controller: nickNameController,
+                      style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                         ),
                       decoration: InputDecoration(
-                          labelText: "Nick Name",
-                          hintText: "Nick Name",
-                          labelStyle: const TextStyle(color: Colors.black),
-                          hintStyle: GoogleFonts.inter(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              color: const Color(0xFF6F6F6F)),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15))),
+                        labelText: "Nick Name",
+                        hintText: "Nick Name",
+                        labelStyle:GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 12,color: Color(0xff6F6F6F)),
+                        hintStyle: GoogleFonts.inter(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: const Color(0xFF6F6F6F)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color(0xFF6F6F6F)),
+                          borderRadius: BorderRadius.circular(scrWidth * 0.03),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
-                    height: width * 0.04,
+                    height: scrWidth * 0.04,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: width * 0.02),
+                    padding: EdgeInsets.only(left: scrWidth * 0.02),
                     child: TextFormField(
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
@@ -127,23 +136,30 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                         return null;
                       },
                       controller: usenameController,
+
                       decoration: InputDecoration(
                           labelText: "User Name",
                           hintText: "User Name",
-                          labelStyle: const TextStyle(color: Colors.black),
+                          labelStyle:GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 12,color: Color(0xff6F6F6F)),
                           hintStyle: GoogleFonts.inter(
                               fontWeight: FontWeight.w400,
                               fontSize: 12,
                               color: const Color(0xFF6F6F6F)),
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15))),
+                              borderRadius: BorderRadius.circular(12)),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color(0xFF6F6F6F)),
+                          borderRadius: BorderRadius.circular(scrWidth * 0.03),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
-                    height: width * 0.04,
+                    height: scrWidth * 0.04,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: width * 0.02),
+                    padding: EdgeInsets.only(left: scrWidth * 0.02),
                     child: TextFormField(
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
@@ -159,64 +175,70 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                       },
                       controller: emailController,
                       decoration: InputDecoration(
-                          labelText: "Email",
-                          hintText: "Email",
-                          labelStyle: const TextStyle(color: Colors.black),
-                          hintStyle: GoogleFonts.inter(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              color: const Color(0xFF6F6F6F)),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15))),
+                        labelText: "Email",
+                        hintText: "Email",
+                        labelStyle:GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 12,color: Color(0xff6F6F6F)),
+                        hintStyle: GoogleFonts.inter(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: const Color(0xFF6F6F6F)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color(0xFF6F6F6F)),
+                          borderRadius: BorderRadius.circular(scrWidth * 0.03),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
-                    height: width * 0.04,
+                    height: scrWidth * 0.04,
                   ),
-                  IntlPhoneField(
-                    controller: phoneNumberController,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(
-                          vertical: width * 0.05, horizontal: width * 0.01),
-                      hintText: "Phone Number",
-                      labelText: "Phone Number",
-                      hintStyle: GoogleFonts.inter(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12,
-                        color: const Color(0xFF6F6F6F),
+                  Padding(
+                    padding: EdgeInsets.only(left: scrWidth * 0.02),
+                    child: IntlPhoneField(
+                      controller: phoneNumberController,
+                      decoration: InputDecoration(
+                        labelText: "Phone Number",
+                        hintText: "Phone Number",
+                        labelStyle:GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 12,color: Color(0xff6F6F6F)),
+                        hintStyle: GoogleFonts.inter(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: const Color(0xFF6F6F6F)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color(0xFF6F6F6F)),
+                          borderRadius: BorderRadius.circular(scrWidth * 0.03),
+                        ),
                       ),
-                      border: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Color(0xFF6F6F6F)),
-                        borderRadius: BorderRadius.circular(width * 0.03),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Color(0xFF6F6F6F)),
-                        borderRadius: BorderRadius.circular(width * 0.03),
-                      ),
+                      initialCountryCode: 'IN',
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly,
+                        LengthLimitingTextInputFormatter(10),
+                      ],
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      validator: (value) {
+                        if (value==0) {
+                          return 'Please enter phoneNumber';
+                        }
+                        final RegExp phoneRegExp = RegExp(
+                          r'^[0-9]{3}-[0-9]{3}-[0-9]{4}$',
+                        );
+                        if (phoneRegExp.hasMatch(value.toString())) {
+                          return 'Invalid phoneNumber';
+                        }
+                        return null;
+                      },
+                      onChanged: (phone) {
+                        countryCode=phone.countryCode;
+                        print(phone.countryCode);
+                      },
                     ),
-                    initialCountryCode: 'IN',
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [
-                      FilteringTextInputFormatter.digitsOnly,
-                      LengthLimitingTextInputFormatter(10),
-                    ],
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    validator: (value) {
-                      if (value==0) {
-                        return 'Please enter phoneNumber';
-                      }
-                      final RegExp phoneRegExp = RegExp(
-                        r'^[0-9]{3}-[0-9]{3}-[0-9]{4}$', 
-                      );
-                      if (phoneRegExp.hasMatch(value.toString())) {
-                        return 'Invalid phoneNumber';
-                      }
-                      return null;
-                    },
-                    onChanged: (phone) {
-                      countryCode=phone.countryCode;
-                      print(phone.countryCode);
-                    },
                   ),
                   // Padding(
                   //   padding: EdgeInsets.only(left: width * 0.02),
@@ -247,10 +269,10 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                   //   ),
                   // ),
                   SizedBox(
-                    height: width * 0.04,
+                    height: scrWidth * 0.04,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: width * 0.02),
+                    padding: EdgeInsets.only(left: scrWidth * 0.02),
                     child: TextFormField(
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
@@ -264,33 +286,41 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                       },
                       controller: passwordController,
                       obscureText: passwordVisibility,
-                      decoration: InputDecoration(
-                          suffixIcon: InkWell(
-                              onTap: () {
-                                ref.read(passwordeyeProvider.notifier).state =
-                                    !passwordVisibility;
-                              },
-                              child: passwordVisibility
-                                  ? const Icon(Icons.visibility_off)
-                                  : const Icon(Icons.remove_red_eye)),
 
+
+                      decoration: InputDecoration(
+                        labelText: "Password",
+                        hintText: "Password",
+                        labelStyle:GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 12,color: Color(0xff6F6F6F)),
+                        suffixIcon: InkWell(
+                            onTap: () {
+                              ref.read(passwordeyeProvider.notifier).state =
+                              !passwordVisibility;
+                            },
+                            child: passwordVisibility
+                                ? const Icon(Icons.visibility_off)
+                                : const Icon(Icons.remove_red_eye)),
+                        hintStyle: GoogleFonts.inter(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: const Color(0xFF6F6F6F)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color(0xFF6F6F6F)),
+                          borderRadius: BorderRadius.circular(scrWidth * 0.03),
+                        ),
+                      ),
                           // focusedBorder: InputBorder.none,
-                          labelText: "Password",
-                          labelStyle: const TextStyle(color: Colors.black),
-                          hintText: "Password",
-                          hintStyle: GoogleFonts.inter(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              color: const Color(0xFF6F6F6F)),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15))),
+
                     ),
                   ),
                   SizedBox(
-                    height: width * 0.04,
+                    height: scrWidth * 0.04,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: width * 0.02),
+                    padding: EdgeInsets.only(left: scrWidth * 0.02),
                     child: TextFormField(
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
@@ -305,19 +335,25 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                       controller: confirmPasswordController,
                       obscureText: true,
                       decoration: InputDecoration(
-                          hintText: "Confirm Password",
-                          labelText: "Confirm Password",
-                          labelStyle: const TextStyle(color: Colors.black),
-                          hintStyle: GoogleFonts.inter(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              color: const Color(0xFF6F6F6F)),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15))),
+                        labelText: "Confirm Password",
+                        hintText: "Confirm Password",
+                        labelStyle:GoogleFonts.inter(fontWeight: FontWeight.w400,fontSize: 12,color: Color(0xff6F6F6F)),
+                        hintStyle: GoogleFonts.inter(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: const Color(0xFF6F6F6F)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color(0xFF6F6F6F)),
+                          borderRadius: BorderRadius.circular(scrWidth * 0.03),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
-                    height: width * 0.06,
+                    height: scrWidth * 0.06,
                   ),
                   InkWell(
                     onTap: () async {
@@ -329,8 +365,8 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                       }
                     },
                     child: Container(
-                      height: width * 0.12,
-                      width: width * 1,
+                      height: scrWidth * 0.12,
+                      width: scrWidth * 1,
                       decoration: BoxDecoration(
                           color: const Color(0xFFE15145),
                           borderRadius: BorderRadius.circular(10)),
@@ -338,12 +374,12 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                           child: Text("Sign Up",
                               style: GoogleFonts.inter(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: width * 0.04,
+                                  fontSize: scrWidth * 0.04,
                                   color: Colors.white))),
                     ),
                   ),
                   SizedBox(
-                    height: width * 0.045,
+                    height: scrWidth * 0.045,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -353,7 +389,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                         style: GoogleFonts.inter(
                             color: const Color(0xFF535353),
                             fontWeight: FontWeight.w500,
-                            fontSize: width * 0.025),
+                            fontSize: scrWidth * 0.025),
                       ),
                       InkWell(
                           onTap: () {
@@ -364,12 +400,12 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                             style: GoogleFonts.inter(
                                 color: const Color(0xFFE15145),
                                 fontWeight: FontWeight.w500,
-                                fontSize: width * 0.025),
+                                fontSize: scrWidth * 0.025),
                           )),
                     ],
                   ),
                   SizedBox(
-                    height: width * 0.08,
+                    height: scrWidth * 0.08,
                   )
                 ],
               ),

@@ -111,6 +111,7 @@ class _Splash_PageState extends ConsumerState<Splash_Page> {
     scrHeight = MediaQuery.of(context).size.height;
     scrWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
