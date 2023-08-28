@@ -2,23 +2,27 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stylish_bottom_bar/model/bar_items.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
-import '../Questions/Questions_Page.dart';
-import 'Appointment/Appointments.dart';
-import 'Home/Home_Page.dart';
-class AnimatedBarExample extends StatefulWidget {
-  const AnimatedBarExample({
+import '../../Core/local/local_variables.dart';
+
+import '../../feature/Activities/Screens/Activities_main.dart';
+import '../../feature/Doctor/Screen/Appointments.dart';
+
+import '../../feature/Peer_Groups/peerGroups.dart';
+import 'Home/screen/Home_Page.dart';
+class NavBar extends StatefulWidget {
+  const NavBar({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<AnimatedBarExample> createState() => _AnimatedBarExampleState();
+  State<NavBar> createState() => _NavBarState();
 }
-var width;
-var height;
-class _AnimatedBarExampleState extends State<AnimatedBarExample> {
+
+class _NavBarState extends State<NavBar> {
   dynamic selected;
 
   PageController controller = PageController();
@@ -32,8 +36,6 @@ class _AnimatedBarExampleState extends State<AnimatedBarExample> {
   @override
   Widget build(BuildContext context) {
 
-    width = MediaQuery.sizeOf(context).width;
-    height = MediaQuery.sizeOf(context).height;
     return Scaffold(
       extendBody: true,
       bottomNavigationBar: StylishBottomBar(
@@ -51,7 +53,7 @@ class _AnimatedBarExampleState extends State<AnimatedBarExample> {
             ),
             selectedColor: Colors.red,
             unSelectedColor: Colors.black54,
-            title:  Text('Home',style: TextStyle(fontSize: width*0.03)),
+            title:  Text('Home',style:GoogleFonts.inter(fontWeight: FontWeight.w500,fontSize: scrWidth*0.03)),
           ),
 
           BottomBarItem(
@@ -59,7 +61,7 @@ class _AnimatedBarExampleState extends State<AnimatedBarExample> {
             selectedColor: Colors.red,
             unSelectedColor: Colors.black54,
 
-            title:  Text('Appointments',style: TextStyle(fontSize: width*0.03)
+            title:  Text('Appointments',style:GoogleFonts.inter(fontWeight: FontWeight.w500,fontSize: scrWidth*0.03)
             ),
           ),
           BottomBarItem(
@@ -68,7 +70,7 @@ class _AnimatedBarExampleState extends State<AnimatedBarExample> {
               ),
               selectedColor: Colors.red,
               unSelectedColor: Colors.black54,
-              title:  Text('Peer Groups',style: TextStyle(fontSize: width*0.03))
+              title:  Text('Peer Groups',style:GoogleFonts.inter(fontWeight: FontWeight.w500,fontSize: scrWidth*0.03))
           ),
           BottomBarItem(
               icon: const Icon(
@@ -76,7 +78,7 @@ class _AnimatedBarExampleState extends State<AnimatedBarExample> {
               ),
               selectedColor: Colors.red,
               unSelectedColor: Colors.black54,
-              title:  Text('Exercise',style: TextStyle(fontSize: width*0.03))
+              title:  Text('Activities',style:GoogleFonts.inter(fontWeight: FontWeight.w500,fontSize: scrWidth*0.03))
           ),
         ],
         hasNotch: true,
@@ -105,11 +107,11 @@ class _AnimatedBarExampleState extends State<AnimatedBarExample> {
         child: PageView(
           controller: controller,
           physics: NeverScrollableScrollPhysics(),
-          children: const [
+          children:  [
             Home_Page(),
             Appointemnts(),
-            Questions_Page(),
-            Center(child: Text('Profile')),
+            PeerGroups(),
+            Activities(),
           ],
         ),
       ),
